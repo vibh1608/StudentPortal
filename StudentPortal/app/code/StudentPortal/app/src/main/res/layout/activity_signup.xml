@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_profile_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="SignUp"
+        fontPath="fonts/LobsterTwo-Italic.otf"
+        android:layout_marginTop="30dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textSize="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        tools:ignore="MissingPrefix" />
+
+    <EditText
+        android:id="@+id/firstname"
+        android:hint="First Name"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_curve_transperent"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        tools:ignore="MissingPrefix"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:hint="Last Name"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_curve_transperent"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        tools:ignore="MissingPrefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/emailRegister"
+        android:hint="EmailID"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_curve_transperent"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        tools:ignore="MissingPrefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/passwordRegister"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_curve_transperent"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        tools:ignore="MissingPrefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_curve_transperent"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        tools:ignore="MissingPrefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/SignupBtn"
+        android:text="SignUp"
+        android:gravity="center"
+        android:background="@drawable/border_solid_blue"
+        android:textColor="@color/colorWhite"
+        android:textSize="25sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        fontPath="fonts/LobsterTwo-Italic.otf"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="MissingPrefix" />
+
+</LinearLayout>

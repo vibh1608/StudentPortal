@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorLightGrey"
+        android:elevation="5dp"
+        android:id="@+id/custom_toolbar_dashboard">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_btn_profile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/default_profile_image"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                fontPath="fonts/LobsterTwo-Italic.otf"
+                android:text="Student Portal"
+                android:layout_centerInParent="true"
+                android:id="@+id/toolbar_title"
+                android:textSize="30sp"
+                tools:ignore="MissingPrefix" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:layout_below="@+id/custom_toolbar_dashboard"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/search_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search_icon"/>
+
+        <EditText
+            android:id="@+id/question_et"
+            android:layout_toRightOf="@+id/search_iv"
+            android:layout_toLeftOf="@+id/add_iv"
+            android:layout_width="match_parent"
+            android:background="@drawable/border_curve_white"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginLeft="3dp"
+            fontPath="fonts/Montserrat_Regular.ttf"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Search"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            tools:ignore="MissingPrefix" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ask"
+            fontPath="fonts/Montserrat_Regular.ttf"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentRight="true"
+            tools:ignore="MissingPrefix" />
+
+        <ImageView
+            android:id="@+id/add_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/add_icon"
+            android:layout_toLeftOf="@+id/tv1"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"/>
+
+
+    </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/question_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rl2">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+
+
+{% block extrahead %}
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/forum_base1.css" %}">
+{% endblock %}
+
+
+{% block container %}
+<br><br><br><br><br><br><br>
+
+{#  <center>  <p>Are you sure you want to delete "{{ object }}"?</p>#}
+{#    <input class='btn btn-danger' type="submit" value="Confirm" /></center>#}
+
+<form method="post">{% csrf_token %}
+<div class="popup">
+  <div class="upper" style="color: red">Are you sure you know what you're doing?</div>
+  <div class="stroke"></div>
+  <div class="lower">
+    <button type="submit"><i class="icon-large icon-ok"></i>yes</button>
+
+
+{#    <a href="#" onclick="window.history.back(); return false;" class="button cancel-link">No, take me back</a>#}
+      <button onclick="window.history.back(); return false" href="#"><i class="icon-large icon-remove"></i>no</button>
+
+  </div>
+</div>
+  </form>
+
+
+
+
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

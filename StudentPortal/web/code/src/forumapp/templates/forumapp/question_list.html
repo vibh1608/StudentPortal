@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+
+
+{% block title %}{{ block.super }}Forum{% endblock %}
+
+    {% block extrahead %}
+{#    <meta http-equiv="refresh" content="1"/>#}
+        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "css/forum_base.css" %}">
+{% endblock %}
+{% block container %}
+
+{#The Cover Type On the Top has the form#}
+
+<br><br><br>
+
+    <!-- For the click and open a collapsing bar effect-->
+<center>
+{#<div class="btn-group">#}
+{#  <button style="width: 100%" type="button" class="btn btn-danger">Have A Question ?? </button>#}
+  <button style="width: 50%" type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+   Have A Question ??  <span class="glyphicon glyphicon-arrow-down"></span>
+  </button>
+{#</div>#}
+</center>
+
+<div id="demo" class="collapse">    <!-- For the click and open a collapsing bar effect-->
+<!-- Form -->
+<div class="container profile-head">
+  <div class="row">
+    <div class="col-sm-10">
+        <!-- Functionality added in Iframe -->
+        <center><iframe src="{% url "forumapp:question_new" %}" style="border:2px solid grey;text-align: center;" width="1125" height="550" ></iframe></center>
+    </div>
+  </div>
+</div>
+</div>      <!-- End of div  :       For the click and opening : a collapsing bar effect-->
+
+{#</div>#}
+
+<hr style="border-color: black;" class="col-sm-12">
+{#<div class="">#}
+<div class="container profile-body new-decided">
+  <div class="row">
+    <div class="col-sm-11">
+
+    {% for question in question_list %}
+        <div class="jumbotron" style="border: groove;">
+{#Question #}
+
+            <!-- Profile Image -->
+
+   <div class="row" style="margin-left: -50px;margin-top: 0px">
+      <div class="row2">
+          <!-- Taking User To The profile page of the author of the post-->
+       <div class="col-md-10">
+        <a href="{% url "profiles:show" slug=question.author.profile.slug %}"><div class="col-md-1"> <img title="profile picture" class="img-circle img-responsive" src="{% thumbnail question.author.profile.picture|default:'default_profile.png' 60x60 crop %}">
+               </div>
+               </a>
+
+
+{#          <strong style="color: #de0c00">Q-</strong>#}
+
+{#        <div class="s1"></div>#}
+                <p><h2>
+                <a href="{% url 'forumapp:question_detail' pk=question.pk %}">{{ question.author.name }}</a></h2>
+                <a href="{% url 'forumapp:question_detail' pk=question.pk %}">{{ question.author.email }}</a></p>
+</div>
+          <!-- Added Delete And Edit Functionality to the Questions-->
+          {% if question.author.profile.user == user %}
+          <a class="btn btn-success" href="{% url 'forumapp:question_edit' pk=question.pk %}">Edit?</a>
+          <a class="btn btn-danger" href="{% url 'forumapp:question_remove' pk=question.pk %}">Delete?</a>
+{% endif %}
+
+
+      </div>
+  </div>
+{#            <a href="{% url 'forumapp:question_detail' pk=question.pk %}"><p><h2>{{ question.title }}</h2></a></p>#}
+
+{# having the read more button#}
+            <h3>{{ question.content }}</h3>
+  <p class="read-more"><a href="{% url "forumapp:question_detail" pk=question.pk %}" class="button">Answers</a></p>
+
+
+            <div class="date">
+                Published on__{{ question.timestamp|date }}  -
+                {{ question.timestamp|timesince}} ago - {{ question.timestamp|time}}
+                <!--Name--><br>
+                By :  {{ question.author.name.capitalize }}
+            </div>
+
+{#            <a href="{% url 'question_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>#}
+        </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock container %}

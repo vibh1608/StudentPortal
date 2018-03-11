@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
+
+
+{% block navbar %}
+
+{% endblock %}
+
+{% block container %}
+{#    <h1>New comment</h1>#}
+
+    <div class="container col-sm-10" style="padding-left: 20%">
+    <form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+        <div class="button" style="padding-left: 82%">
+    <button type="submit" class="save btn btn-success">Post Comment</button>
+            </div>
+    </form>
+</div>
+{#    <script>var editor = new MediumEditor('.editable');</script>#}
+
+{% endblock container %}
+
+{% block footer %}
+
+{% endblock %}

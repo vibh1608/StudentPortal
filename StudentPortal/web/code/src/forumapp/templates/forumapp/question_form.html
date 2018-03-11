@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+   <!-- To Remove Navbar Just Add The template tag blank in the inherited html-->
+{% block navbar %}
+{% endblock %}
+
+
+    {% block extrahead %}
+{#    <meta http-equiv="refresh" content="1"/>#}
+        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "css/forum_base.css" %}">
+{% endblock %}
+
+{% block container %}
+{#    <style>.temporary{background-image: url("/forumapp/static/forum_bag.jpg"); }</style>#}
+{% block form %}
+    <div class="container form-box">
+<center>
+
+    <article>
+        <h1>New post</h1>
+    <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="save btn btn-primary">Save</button>
+    </form>
+        </article>
+
+</center>
+    </div>
+{% endblock %}
+
+    <!-- To Remove Footer Just Add The template tag blank in the inherited html-->
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

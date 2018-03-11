@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/gradient_profile_screen"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/emailId"
+        android:hint="Email"
+        android:background="@drawable/border_curve_transperent"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingPrefix" />
+
+    <EditText
+        android:id="@+id/password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/border_curve_transperent"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/signBtn"
+        android:text="SignUp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        fontPath="fonts/Montserrat_Regular.ttf"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/colorBlack"
+        android:textSize="13sp"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/loginBtn"
+        android:text="Login"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:elevation="3dp"
+        android:textColor="@color/colorWhite"
+        fontPath="fonts/LobsterTwo-Italic.otf"
+        android:background="@drawable/border_solid_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingPrefix" />
+
+
+</LinearLayout>
